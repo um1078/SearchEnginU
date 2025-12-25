@@ -1,13 +1,13 @@
 
-package searchengine.utils;
+package searchengine.tets_Lemm;
 
 import org.apache.lucene.morphology.LuceneMorphology;
-import org.apache.lucene.morphology.russian.RussianLuceneMorphology;
 import org.apache.lucene.morphology.english.EnglishLuceneMorphology;
+import org.apache.lucene.morphology.russian.RussianLuceneMorphology;
 
 import java.util.*;
 
-public class LemmaTester {
+public class Test {
     public static void main(String[] args) {
         try {
             LuceneMorphology russianMorphology = new RussianLuceneMorphology();
