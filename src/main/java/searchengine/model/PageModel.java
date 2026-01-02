@@ -4,8 +4,7 @@ package searchengine.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
-import javax.persistence.Index;
+import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +14,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "page", indexes = @Index(name = "path_idx", columnList = "path, site_id", unique = true))
+//@Table(name = "page", indexes = @Index(name = "path_idx", columnList = "path, site_id", unique = true))
+@Table(name = "page", indexes = @jakarta.persistence.Index(name = "path_idx", columnList = "path, site_id", unique = true))
 @ToString
 public class PageModel {
     @Id
