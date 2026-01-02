@@ -15,7 +15,7 @@ import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
-public class StatisticsServiceImpl implements StatisticsService {
+public class StatisticsServiceImpl implements searchengine.services.StatisticsService {
 
     private final Random random = new Random();
     private final SitesList sites;
