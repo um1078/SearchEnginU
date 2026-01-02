@@ -43,8 +43,6 @@
         </dependency>
 
 
-
-
         <!-- Lucene Core -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -60,7 +58,8 @@
             <artifactId>lucene-analyzers-common</artifactId>
             <version>8.11.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/lucene-analyzers-common/8.11.0/lucene-analyzers-common-8.11.0.jar</systemPath>
+            <systemPath>${project.basedir}/libs/lucene-analyzers-common/8.11.0/lucene-analyzers-common-8.11.0.jar
+            </systemPath>
         </dependency>
 
         <!-- Russian Morphology -->
@@ -103,17 +102,16 @@
         </dependency>
 
         <!-- MySQL -->
-<!--        <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>mysql</groupId>-->
+        <!--            <artifactId>mysql-connector-java</artifactId>-->
+        <!--            <scope>runtime</scope>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
-
 
 
         <!-- JetBrains annotations -->

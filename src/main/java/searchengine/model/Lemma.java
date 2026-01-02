@@ -1,6 +1,8 @@
 package searchengine.model;
 
+import jakarta.persistence.*;
 import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 
 import javax.persistence.*;
@@ -26,7 +28,7 @@ public class Lemma implements Comparable<Lemma> {
     @JoinColumn(foreignKey = @ForeignKey(name = "FK_LEMMA_SITE_ID"),
             name = "site_id", referencedColumnName = "id")
     @ToString.Exclude
-    private SiteModel site;
+    private searchengine.model.SiteModel site;
 
     @Column(name = "lemma", nullable = false, length = 200)
     private String lemma;
@@ -39,7 +41,7 @@ public class Lemma implements Comparable<Lemma> {
             joinColumns = {@JoinColumn(name = "lemma_id")},
             inverseJoinColumns = {@JoinColumn(name = "page_id")})
     @ToString.Exclude
-    private Set<PageModel> pageModels = new HashSet<>();
+    private Set<searchengine.model.PageModel> pageModels = new HashSet<>();
 
     @Transient
     private Float rank;
