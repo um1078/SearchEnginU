@@ -10,6 +10,7 @@ import javax.persistence.Index;
 import java.util.HashSet;
 import java.util.Set;
 
+//интересно
 @Entity
 @Builder
 @AllArgsConstructor
