@@ -2,6 +2,7 @@ package searchengine.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import searchengine.dto.index.IndexResponse;
 import searchengine.dto.search.SearchRequestDto;
