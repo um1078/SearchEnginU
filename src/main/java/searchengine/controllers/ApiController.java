@@ -20,6 +20,32 @@ public class ApiController {
     private final IndexHandler indexHandler;
     private final SearchHandler searchHandler;
 
+    @Service
+    public class IndexHandler {
+        public IndexResponse startIndexing() {
+            return new IndexResponse(true, "Индексация запущена");
+        }
+
+        public IndexResponse stopIndexing() {
+            return new IndexResponse(true, "Индексация остановлена");
+        }
+
+        public IndexResponse indexPage(String url) {
+            return new IndexResponse(true, "Страница проиндексирована: " + url);
+        }
+    }
+
+    @Service
+    public class SearchHandler {
+        public SearchResponse getResult(SearchRequestDto request) {
+            SearchResponse response = new SearchResponse();
+            response.setResult(true);
+            response.setCount(1);
+            response.setData("Результаты поиска по запросу: " + request.getQuery());
+            return response;
+        }
+    }
+
     @GetMapping("/statistics")
     public ResponseEntity<StatisticsResponse> statistics() {
         return ResponseEntity.ok(statisticsService.getStatistics());
