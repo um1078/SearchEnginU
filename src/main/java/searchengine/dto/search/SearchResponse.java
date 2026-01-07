@@ -32,6 +32,7 @@ public class SearchResponse {
         }
 
         public void setResult(boolean result) {
+
             this.result = result;
         }
 
