@@ -1,5 +1,3 @@
-# example values
-
 indexing-settings:
   sites:
     - url: https://www.lenta.ru
@@ -11,6 +9,7 @@ indexing-settings:
 
 server:
   port: 8080
+
 spring:
   datasource:
     username: root
@@ -18,18 +17,15 @@ spring:
     url: jdbc:mysql://localhost:3306/search_engine?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
 
   jpa:
+    # database-platform вместо dialect — более корректный способ для Spring Boot 3
+    database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
-        enable_lazy_Load_no_trans: true
+        enable_lazy_load_no_trans: true # Исправлена опечатка (Load -> load)
         event:
           merge:
             entity_copy_observer: allow
-        dialect: org.hibernate.dialect.MySQL5Dialect
         format_sql: false
     hibernate:
       ddl-auto: update
     show-sql: false
-
-
-
-
