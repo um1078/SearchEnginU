@@ -5,8 +5,6 @@ import lombok.*;
 import org.jetbrains.annotations.NotNull;
 
 
-import javax.persistence.*;
-import javax.persistence.Index;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +15,8 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "lemma", indexes = @Index(name = "lemma_idx", columnList = "lemma, site_id", unique = true))
+//@Table(name = "lemma", indexes = @Index(name = "lemma_idx", columnList = "lemma, site_id", unique = true))
+@Table(name = "page", indexes = @jakarta.persistence.Index(name = "path_idx", columnList = "path, site_id", unique = true))
 @ToString
 public class Lemma implements Comparable<Lemma> {
     @Id
