@@ -1,10 +1,8 @@
 package searchengine.model;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,34 +12,27 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-//@Table(name = "page", indexes = @Index(name = "path_idx", columnList = "path, site_id", unique = true))
 @Table(name = "page", indexes = @jakarta.persistence.Index(name = "path_idx", columnList = "path, site_id", unique = true))
 @ToString
 public class PageModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Integer id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "FK_PAGE_SITE_ID"),
-            name = "site_id", referencedColumnName = "id")
-    @ToString.Exclude
-    private SiteModel site;
 
-    @Column(name = "path", length = 200)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "site_id", nullable = false)
+    private searchengine.model.SiteModel site;
+
+    @Column(length = 200)
     private String path;
 
-    @Column(name = "code", nullable = false)
+    @Column(nullable = false)
     private Integer code;
 
-    @Column(name = "content", nullable = false,
-            columnDefinition = "mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci")
+    @Column(nullable = false, columnDefinition = "mediumtext")
     private String content;
 
-    @Transient
-    private String url;
-
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "pageModels", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "pageModel", cascade = CascadeType.ALL)
     @ToString.Exclude
-    private Set<Lemma> lemmas = new HashSet<>();
+    private Set<searchengine.model.Index> indices = new HashSet<>();
 }
