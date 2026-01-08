@@ -32,15 +32,15 @@ public class AppConfiguration {
         return new RussianLuceneMorphology();
     }
 
-    @Bean
-    @ConfigurationProperties(prefix = "indexing-settings")
-    public SitesList siteList(SitesList sitesList) {
-        return sitesList;
-    }
+//    @Bean
+//    @ConfigurationProperties(prefix = "indexing-settings")
+//    public SitesList siteList(SitesList sitesList) {
+//        return sitesList;
+//    }
 
     @Bean
     @ConfigurationProperties(prefix = "jsoup-connection-settings")
-    public JsoupConfiguration getConfiguration(JsoupConfiguration configuration) {
+    public searchengine.config.JsoupConfiguration getConfiguration(searchengine.config.JsoupConfiguration configuration) {
         return configuration;
     }
 }

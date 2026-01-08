@@ -9,5 +9,5 @@ import lombok.Setter;
 @Data
 public class StatisticsResponse {
     private boolean result;
-    private StatisticsData statistics;
+    private searchengine.dto.statistics.StatisticsData statistics;
 }
